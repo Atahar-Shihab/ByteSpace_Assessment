@@ -2,7 +2,7 @@
 
 > **Candidate:** Atahar Shihab  
 > **Position:** Jr. Software Engineer (Frontend)  
-> **Live Demo:** [bytespace-assessment.vercel.app](https://bytespace-assessment.vercel.app) *(or your deployed Vercel URL)*  
+> **Live Demo:** *[Paste Your Live Vercel URL Here after deploying]*  
 > **Repository:** [https://github.com/Atahar-Shihab/ByteSpace_Assessment](https://github.com/Atahar-Shihab/ByteSpace_Assessment)
 
 ---
