@@ -23,22 +23,22 @@ export default function NotFound() {
         />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
-          {/* Giant Semi-Transparent Lime 404 */}
+          {/* Giant Vibrant Lime Gradient 404 */}
           <div
             aria-hidden="true"
-            className="relative z-0 select-none font-heading font-black text-[180px] sm:text-[280px] md:text-[340px] lg:text-[400px] leading-none tracking-tight text-[#D4F82D] opacity-70 -mb-20 sm:-mb-32 md:-mb-44 lg:-mb-52"
+            className="relative z-0 select-none font-heading font-black text-[180px] sm:text-[260px] md:text-[320px] lg:text-[380px] leading-none tracking-tight bg-gradient-to-b from-[#D4F82D] via-[#D4F82D]/85 to-transparent bg-clip-text text-transparent -mb-20 sm:-mb-28 md:-mb-36 lg:-mb-44"
           >
             404
           </div>
 
           {/* Heading overlapping on top of 404 */}
-          <h1 className="relative z-10 font-heading font-bold text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight max-w-2xl mx-auto">
-            The page you are looking <br className="hidden sm:inline" />
+          <h1 className="relative z-10 font-heading font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[54px] text-white tracking-tight leading-[1.2] max-w-3xl mx-auto">
+            The page you are looking <br />
             for doesn&apos;t exist
           </h1>
 
           {/* Small description text */}
-          <p className="relative z-10 mt-6 text-sm sm:text-base text-white/80 max-w-md mx-auto">
+          <p className="relative z-10 mt-6 text-sm sm:text-base text-white/80 max-w-md mx-auto font-sans">
             Try to use a correct url or go back to homepage to start again
           </p>
 
@@ -46,7 +46,7 @@ export default function NotFound() {
           <div className="relative z-10 mt-8 flex justify-center">
             <Link
               href="/"
-              className="inline-flex items-center justify-center border-2 border-[#D4F82D] text-[#D4F82D] bg-transparent hover:bg-[#D4F82D] hover:text-[#0052FF] font-medium px-8 py-3 rounded-full text-base transition-all duration-200 active:scale-95"
+              className="inline-flex items-center justify-center bg-[#D4F82D] hover:bg-[#c2e620] text-gray-950 font-bold px-8 py-3.5 rounded-full text-base transition-all duration-200 active:scale-95 shadow-lg shadow-black/10 font-sans"
             >
               Back to Home
             </Link>
