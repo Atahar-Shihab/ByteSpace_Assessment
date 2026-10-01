@@ -64,17 +64,17 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Bottom Left Lime Torus */}
+      {/* Bottom Left White Torus */}
       <motion.div
         animate={{ y: [0, -10, 0], rotate: [0, 12, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-8 left-10 md:left-32 w-24 md:w-36 pointer-events-none z-10"
+        className="absolute bottom-8 left-6 md:left-24 w-28 md:w-40 pointer-events-none z-10"
       >
         <Image
-          src="/assets/Cone (1).png"
-          alt="3D Lime Torus"
-          width={140}
-          height={140}
+          src="/assets/Torus_White.png"
+          alt="3D White Torus"
+          width={160}
+          height={160}
           className="object-contain drop-shadow-xl"
         />
       </motion.div>
@@ -90,6 +90,21 @@ export function Hero() {
           alt="3D Lime Cone"
           width={160}
           height={160}
+          className="object-contain drop-shadow-xl"
+        />
+      </motion.div>
+
+      {/* Mid Right White Pyramid */}
+      <motion.div
+        animate={{ y: [0, -10, 0], rotate: [0, 6, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+        className="absolute top-64 right-10 md:right-36 w-20 md:w-32 pointer-events-none z-10"
+      >
+        <Image
+          src="/assets/Pyramid_White.png"
+          alt="3D White Pyramid"
+          width={130}
+          height={130}
           className="object-contain drop-shadow-xl"
         />
       </motion.div>
