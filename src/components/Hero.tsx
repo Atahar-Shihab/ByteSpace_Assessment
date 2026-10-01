@@ -64,41 +64,56 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Bottom Left Lime Torus */}
+      {/* Bottom Left White Torus */}
       <motion.div
-        animate={{ y: [0, -10, 0], rotate: [0, 12, 0] }}
+        animate={{ y: [0, -10, 0], rotate: [0, 8, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-8 left-6 md:left-24 w-28 md:w-40 pointer-events-none z-10"
+        className="absolute -bottom-6 left-2 sm:left-10 md:left-16 w-32 sm:w-44 md:w-52 pointer-events-none z-10"
       >
         <Image
-          src="/assets/Cone (1).png"
-          alt="3D Lime Torus"
-          width={160}
-          height={160}
+          src="/assets/Torus_White.png"
+          alt="3D White Torus"
+          width={200}
+          height={200}
           className="object-contain drop-shadow-xl"
         />
       </motion.div>
 
-      {/* Top Right Lime Pyramid/Cone */}
+      {/* Top Right Lime Cone/Cylinder */}
       <motion.div
-        animate={{ y: [0, 12, 0], rotate: [0, 8, 0] }}
+        animate={{ y: [0, 12, 0], rotate: [0, 6, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-        className="absolute top-12 right-6 md:right-16 w-28 md:w-44 pointer-events-none z-10"
+        className="absolute top-8 right-2 sm:right-10 md:right-16 w-32 sm:w-44 md:w-52 pointer-events-none z-10"
       >
         <Image
           src="/assets/Cone.png"
           alt="3D Lime Cone"
-          width={180}
-          height={180}
+          width={200}
+          height={200}
+          className="object-contain drop-shadow-xl"
+        />
+      </motion.div>
+
+      {/* Mid Right White Pyramid / Tetrahedron */}
+      <motion.div
+        animate={{ y: [0, -10, 0], rotate: [0, -5, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+        className="absolute top-56 right-6 sm:right-20 md:right-32 w-24 sm:w-32 md:w-40 pointer-events-none z-10"
+      >
+        <Image
+          src="/assets/Pyramid_White.png"
+          alt="3D White Pyramid"
+          width={150}
+          height={150}
           className="object-contain drop-shadow-xl"
         />
       </motion.div>
 
       {/* Bottom Right White Zigzag */}
       <motion.div
-        animate={{ y: [0, -14, 0], rotate: [0, -5, 0] }}
+        animate={{ y: [0, -12, 0], rotate: [0, -6, 0] }}
         transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-        className="absolute bottom-12 right-4 md:right-16 w-28 md:w-44 pointer-events-none z-10"
+        className="absolute bottom-8 right-4 sm:right-14 md:right-20 w-28 sm:w-40 md:w-48 pointer-events-none z-10"
       >
         <Image
           src="/assets/Frame (3).png"
@@ -116,7 +131,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-extrabold tracking-tight leading-[1.12]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold tracking-tight leading-[1.12] font-heading"
           >
             Get Access to Hundreds <br className="hidden sm:inline" />
             Courses Available
@@ -126,7 +141,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="mt-5 text-base sm:text-lg md:text-xl text-white/85 max-w-2xl mx-auto font-normal"
+            className="mt-5 text-base sm:text-lg md:text-xl text-white/85 max-w-2xl mx-auto font-normal font-sans"
           >
             Unlock your creativity, gain valuable knowledge, and grow your
             business with our wide range of courses.
@@ -147,24 +162,24 @@ export function Hero() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Course, topic, creator"
-                className="w-full ml-3 text-sm sm:text-base text-gray-800 placeholder-gray-400 bg-transparent outline-none"
+                className="w-full ml-3 text-sm sm:text-base text-gray-800 placeholder-gray-400 bg-transparent outline-none font-sans"
               />
             </div>
             <button
               type="submit"
-              className="bg-[#D4F82D] hover:bg-[#c2e620] text-gray-900 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base transition-all duration-200 active:scale-95 shadow-sm shrink-0"
+              className="bg-[#D4F82D] hover:bg-[#c2e620] text-gray-900 font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base transition-all duration-200 active:scale-95 shadow-sm shrink-0 font-sans"
             >
               Search
             </button>
           </motion.form>
         </div>
 
-        {/* Center Visual: Model with Lime Circle & Floating Badge Cards */}
-        <div className="mt-12 sm:mt-16 relative max-w-3xl mx-auto flex items-center justify-center">
+        {/* Center Visual: Model with Large Lime Circle & Floating Badge Cards */}
+        <div className="mt-12 sm:mt-16 relative max-w-4xl mx-auto flex items-center justify-center">
           {/* Lime Green Circle Backdrop */}
-          <div className="relative w-[300px] h-[300px] sm:w-[420px] sm:h-[420px] md:w-[460px] md:h-[460px] rounded-full bg-[#D4F82D] flex items-center justify-center shadow-2xl shadow-yellow-400/20 overflow-visible">
+          <div className="relative w-[320px] h-[320px] sm:w-[440px] sm:h-[440px] md:w-[520px] md:h-[520px] lg:w-[560px] lg:h-[560px] rounded-full bg-[#D4F82D] flex items-center justify-center shadow-2xl shadow-yellow-400/25 overflow-visible">
             {/* Young Man with Laptop Image */}
-            <div className="relative w-[340px] sm:w-[480px] md:w-[520px] h-[340px] sm:h-[480px] md:h-[520px] -mt-10 sm:-mt-14 pointer-events-none">
+            <div className="relative w-[360px] sm:w-[500px] md:w-[580px] lg:w-[620px] h-[360px] sm:h-[500px] md:h-[580px] lg:h-[620px] -mt-10 sm:-mt-14 pointer-events-none">
               <Image
                 src="/assets/Image (1).png"
                 alt="Student learning on ByteSpace"
@@ -174,32 +189,32 @@ export function Hero() {
               />
             </div>
 
-            {/* Badge 1: Top Left - UI/UX Design */}
+            {/* Badge 1: Top Left - UI/UX Design (level with cheek/ear) */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -top-3 -left-4 sm:top-2 sm:-left-12 md:-left-16 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-xl border border-gray-100/60 z-30 select-none hidden sm:flex flex-col"
+              className="absolute top-[34%] -left-2 sm:top-[35%] sm:-left-8 md:-left-12 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-xl border border-gray-100/70 z-30 select-none hidden sm:flex flex-col"
             >
-              <span className="font-bold text-sm sm:text-base text-gray-900">
+              <span className="font-bold text-sm sm:text-base text-gray-900 font-heading">
                 UI/UX Design
               </span>
-              <span className="text-[11px] sm:text-xs text-gray-500 font-medium mt-0.5">
+              <span className="text-[11px] sm:text-xs text-gray-500 font-medium mt-0.5 font-sans">
                 200 Courses • 1000+ Students
               </span>
             </motion.div>
 
-            {/* Badge 2: Top Right - Learning Progress */}
+            {/* Badge 2: Top Right - Learning Progress (level with chest/shoulder) */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute top-2 -right-4 sm:top-6 sm:-right-8 md:-right-12 bg-white text-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100/60 z-30 select-none min-w-[150px] hidden sm:block"
+              className="absolute top-[38%] -right-2 sm:top-[39%] sm:-right-8 md:-right-12 bg-white text-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100/70 z-30 select-none min-w-[155px] hidden sm:block"
             >
-              <div className="text-[11px] sm:text-xs text-gray-500 font-medium">
+              <div className="text-[11px] sm:text-xs text-gray-500 font-medium font-sans">
                 Learning Progress
               </div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-0.5">
+              <div className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-0.5 font-heading">
                 55%
               </div>
               {/* Progress bar */}
@@ -208,12 +223,12 @@ export function Hero() {
               </div>
             </motion.div>
 
-            {/* Badge 3: Bottom Left - Happy Students */}
+            {/* Badge 3: Bottom Left - Happy Students (overlapping lower circle and forearm) */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="absolute -bottom-6 -left-6 sm:bottom-4 sm:-left-10 md:-left-16 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-xl border border-gray-100/60 z-30 select-none flex flex-col min-w-[190px]"
+              className="absolute bottom-[10%] -left-2 sm:bottom-[12%] sm:-left-8 md:-left-10 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-xl border border-gray-100/70 z-30 select-none flex flex-col min-w-[190px]"
             >
               <div className="flex items-center justify-between gap-2">
                 <span className="font-bold text-xs sm:text-sm text-gray-900">
