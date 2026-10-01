@@ -15,7 +15,10 @@ export function CreatorFeature() {
 
   return (
     <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Ambient Background Glows */}
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#D4F82D]/20 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3 z-0 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Visual Composition (Creator Model with Revenue Badges) */}
           <div className="lg:col-span-6 relative flex justify-center items-center order-2 lg:order-1">
