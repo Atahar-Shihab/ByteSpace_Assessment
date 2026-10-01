@@ -21,55 +21,75 @@ export function CreatorFeature() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Visual Composition (Creator Model with Revenue Badges) */}
+          {/* Left Visual Composition with Depth Layering */}
           <div className="md:col-span-1 relative flex justify-center items-center order-2 md:order-1">
-            <div className="relative w-full max-w-[460px] h-[480px] sm:h-[540px]">
-              {/* Creator with Tablet Image */}
-              <div className="relative w-full h-full">
-                <Image
-                  src="/assets/Image.png"
-                  alt="Create and Manage Courses"
-                  fill
-                  className="object-contain object-bottom drop-shadow-2xl"
-                />
-              </div>
+            <div className="relative w-full max-w-[480px] h-[500px] sm:h-[540px]">
 
-              {/* Floating Badge 1: Total Revenue (Top Left) */}
+              {/* BEHIND LAYER (z-10): Total Revenue Card tucked behind right shoulder */}
               <motion.div
-                animate={{ y: [0, -7, 0] }}
+                animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-8 -left-2 sm:-left-6 bg-[#0052FF] text-white rounded-2xl p-4 shadow-xl border border-blue-400/30 z-20 min-w-[140px]"
+                className="absolute top-6 left-0 sm:left-2 bg-[#0052FF] text-white rounded-2xl p-4 shadow-xl border border-blue-400/30 z-10 min-w-[150px]"
               >
-                <div className="text-[11px] text-blue-100 font-medium">Total Revenue</div>
-                <div className="text-[10px] text-blue-200">July 1-28</div>
-                <div className="text-xl font-bold mt-1 text-white">$120.29</div>
+                <div className="text-[11px] text-blue-100 font-medium font-sans">Total Revenue</div>
+                <div className="text-[10px] text-blue-200 font-sans">July 1-28</div>
+                <div className="text-xl font-bold mt-1 text-white font-heading">$120.29</div>
+                <div className="w-full bg-blue-400/40 h-1.5 rounded-full mt-2.5 overflow-hidden">
+                  <div className="bg-[#D4F82D] h-full w-[70%] rounded-full" />
+                </div>
               </motion.div>
 
-              {/* Floating Badge 2: Year to Date (Mid Left) */}
+              {/* BEHIND LAYER (z-10): Year to Date Card tucked behind right arm/jacket */}
               <motion.div
-                animate={{ y: [0, 9, 0] }}
+                animate={{ y: [0, 7, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-                className="absolute top-36 -left-4 sm:-left-8 bg-[#0038B8] text-white rounded-2xl p-4 shadow-xl border border-blue-400/20 z-20 min-w-[160px]"
+                className="absolute top-44 left-0 sm:left-2 bg-[#0038B8] text-white rounded-2xl p-4 shadow-xl border border-blue-400/20 z-10 min-w-[165px]"
               >
-                <div className="text-[11px] text-blue-200 font-medium">Year to Date</div>
-                <div className="text-[10px] text-blue-300">2023</div>
+                <div className="text-[11px] text-blue-200 font-medium font-sans">Year to Date</div>
+                <div className="text-[10px] text-blue-300 font-sans">2023</div>
                 <div className="flex items-center justify-between gap-2 mt-1">
-                  <span className="text-lg font-bold text-white">$1,200.38</span>
-                  <span className="bg-[#D4F82D] text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                  <span className="text-lg font-bold text-white font-heading">$1,200.38</span>
+                  <span className="bg-[#D4F82D] text-gray-900 text-[10px] font-bold px-2 py-0.5 rounded-full font-sans">
                     +128
                   </span>
                 </div>
               </motion.div>
 
-              {/* Floating Badge 3: Happy Students (Bottom Center-Left) */}
+              {/* BEHIND LAYER (z-10): Lime 3D Spiral tucked behind left arm */}
               <motion.div
-                animate={{ y: [0, -6, 0] }}
+                animate={{ rotate: [0, -8, 0], y: [0, 8, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-36 right-4 sm:right-8 w-24 h-24 pointer-events-none z-10"
+              >
+                <Image
+                  src="/assets/Frame.png"
+                  alt="3D Spiral"
+                  width={96}
+                  height={96}
+                  className="object-contain drop-shadow-md"
+                />
+              </motion.div>
+
+              {/* MIDDLE LAYER (z-20): Creator Model Woman Image */}
+              <div className="relative w-full h-full z-20 pointer-events-none">
+                <Image
+                  src="/assets/Image.png"
+                  alt="Create and Manage Courses"
+                  fill
+                  priority
+                  className="object-contain object-bottom drop-shadow-2xl"
+                />
+              </div>
+
+              {/* FOREGROUND LAYER (z-30): Happy Students Badge sits in front overlapping lower right body */}
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute bottom-6 left-2 sm:left-4 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-2xl border border-gray-100 z-20 min-w-[180px]"
+                className="absolute bottom-6 right-0 sm:right-4 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-2xl border border-gray-100 z-30 min-w-[185px]"
               >
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-bold text-xs text-gray-900">Happy Students</span>
-                  <span className="flex items-center text-xs font-semibold text-gray-700">
+                  <span className="font-bold text-xs text-gray-900 font-heading">Happy Students</span>
+                  <span className="flex items-center text-xs font-semibold text-gray-700 font-sans">
                     4.5 (240){" "}
                     <Star className="w-3.5 h-3.5 fill-[#EAB308] text-[#EAB308] ml-1" />
                   </span>
@@ -91,20 +111,6 @@ export function CreatorFeature() {
                 </div>
               </motion.div>
 
-              {/* Lime 3D Spiral Decoration */}
-              <motion.div
-                animate={{ rotate: [0, -8, 0], y: [0, 10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-28 -right-2 sm:-right-6 w-24 h-24 pointer-events-none z-10"
-              >
-                <Image
-                  src="/assets/Frame.png"
-                  alt="3D Spiral"
-                  width={96}
-                  height={96}
-                  className="object-contain drop-shadow-md"
-                />
-              </motion.div>
             </div>
           </div>
 

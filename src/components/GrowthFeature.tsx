@@ -48,25 +48,16 @@ export function GrowthFeature() {
             </div>
           </div>
 
-          {/* Right Visual Composition */}
+          {/* Right Visual Composition with Depth Layering */}
           <div className="md:col-span-1 relative flex justify-center items-center">
-            {/* Soft background shape */}
-            <div className="relative w-full max-w-[480px] h-[480px] sm:h-[540px]">
-              {/* Young Man with Laptop Image */}
-              <div className="relative w-full h-full">
-                <Image
-                  src="/assets/Image (1).png"
-                  alt="Professional Growth"
-                  fill
-                  className="object-contain object-bottom drop-shadow-xl"
-                />
-              </div>
-
-              {/* Floating Course Card (Left) */}
+            {/* Visual Container */}
+            <div className="relative w-full max-w-[480px] h-[500px] sm:h-[540px]">
+              
+              {/* BEHIND LAYER (z-10): Course Card tucked behind right shoulder */}
               <motion.div
-                animate={{ y: [0, -8, 0] }}
+                animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-10 -left-4 sm:-left-8 bg-white rounded-2xl p-3 shadow-2xl border border-gray-100 max-w-[210px] hidden sm:block"
+                className="absolute top-4 left-0 sm:left-2 bg-white rounded-2xl p-3.5 shadow-xl border border-gray-100/90 w-[230px] sm:w-[250px] z-10"
               >
                 <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-gray-100 mb-2">
                   <Image
@@ -76,31 +67,34 @@ export function GrowthFeature() {
                     className="object-cover"
                   />
                 </div>
-                <div className="text-xs font-bold text-gray-900 truncate">
+                <div className="text-xs font-bold text-gray-900 truncate font-heading">
                   Learn Figma from Basic
                 </div>
-                <div className="text-[10px] text-gray-400">by purepearl studio</div>
-                <div className="mt-1 text-xs font-bold text-[#0052FF]">$25/lifetime</div>
+                <div className="text-[10px] text-gray-400 font-sans">by purepearl studio</div>
+                <div className="mt-1 flex items-center justify-between">
+                  <span className="text-xs font-bold text-[#0052FF] font-sans">$25/lifetime</span>
+                  <span className="text-[10px] font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">Beginner</span>
+                </div>
               </motion.div>
 
-              {/* Floating Progress Badge (Right) */}
+              {/* BEHIND LAYER (z-10): Learning Progress Badge tucked behind left arm */}
               <motion.div
-                animate={{ y: [0, 8, 0] }}
+                animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-44 -right-2 sm:-right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 min-w-[150px] z-20"
+                className="absolute top-44 right-0 sm:right-2 bg-white rounded-2xl p-4 shadow-xl border border-gray-100/90 min-w-[160px] z-10"
               >
-                <span className="text-[11px] text-gray-500 font-medium">Learning Progress</span>
-                <div className="text-2xl font-extrabold text-gray-900 mt-0.5">55%</div>
+                <span className="text-[11px] text-gray-500 font-medium font-sans">Learning Progress</span>
+                <div className="text-2xl font-extrabold text-gray-900 mt-0.5 font-heading">55%</div>
                 <div className="w-full bg-gray-100 h-1.5 rounded-full mt-2 overflow-hidden">
                   <div className="bg-[#D4F82D] h-full w-[55%] rounded-full" />
                 </div>
               </motion.div>
 
-              {/* Floating 3D Lime Spiral */}
+              {/* BEHIND LAYER (z-10): Floating 3D Lime Spiral tucked behind left shoulder */}
               <motion.div
-                animate={{ rotate: [0, 10, 0], y: [0, -12, 0] }}
+                animate={{ rotate: [0, 8, 0], y: [0, -10, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-24 h-24 pointer-events-none z-10"
+                className="absolute top-8 right-6 sm:right-10 w-24 h-24 pointer-events-none z-10"
               >
                 <Image
                   src="/assets/Frame.png"
@@ -110,6 +104,18 @@ export function GrowthFeature() {
                   className="object-contain drop-shadow-md"
                 />
               </motion.div>
+
+              {/* FOREGROUND LAYER (z-20): Young Man with Laptop Image sits IN FRONT */}
+              <div className="relative w-full h-full z-20 pointer-events-none">
+                <Image
+                  src="/assets/Image (1).png"
+                  alt="Professional Growth"
+                  fill
+                  priority
+                  className="object-contain object-bottom drop-shadow-2xl"
+                />
+              </div>
+
             </div>
           </div>
         </div>
