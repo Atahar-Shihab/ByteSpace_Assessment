@@ -9,7 +9,7 @@ export default function NotFound() {
       <Navbar theme="blue" />
 
       {/* 404 Hero Section */}
-      <section className="bg-[#0052FF] text-white pt-32 pb-24 flex-1 flex items-center justify-center relative overflow-hidden text-center">
+      <section className="bg-[#0052FF] text-white pt-36 pb-28 md:pt-44 md:pb-36 flex-1 flex items-center justify-center relative overflow-hidden text-center">
         {/* Background Grid Pattern */}
         <div
           className="absolute inset-0 pointer-events-none opacity-20"
@@ -22,25 +22,31 @@ export default function NotFound() {
           }}
         />
 
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 py-12">
-          {/* Giant Gradient Lime 404 */}
-          <div className="text-[140px] sm:text-[200px] md:text-[240px] font-black tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-b from-[#E2FD42] to-[#8BC34A] select-none drop-shadow-xl">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
+          {/* Giant Semi-Transparent Lime 404 */}
+          <div
+            aria-hidden="true"
+            className="relative z-0 select-none font-heading font-black text-[180px] sm:text-[280px] md:text-[340px] lg:text-[400px] leading-none tracking-tight text-[#D4F82D] opacity-70 -mb-20 sm:-mb-32 md:-mb-44 lg:-mb-52"
+          >
             404
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mt-2 text-white">
+          {/* Heading overlapping on top of 404 */}
+          <h1 className="relative z-10 font-heading font-bold text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-tight max-w-2xl mx-auto">
             The page you are looking <br className="hidden sm:inline" />
             for doesn&apos;t exist
           </h1>
 
-          <p className="mt-4 text-sm sm:text-base text-white/80 max-w-md mx-auto">
+          {/* Small description text */}
+          <p className="relative z-10 mt-6 text-sm sm:text-base text-white/80 max-w-md mx-auto">
             Try to use a correct url or go back to homepage to start again
           </p>
 
-          <div className="mt-8 flex justify-center">
+          {/* Action button */}
+          <div className="relative z-10 mt-8 flex justify-center">
             <Link
               href="/"
-              className="bg-[#D4F82D] hover:bg-[#c2e620] text-gray-950 font-bold px-8 py-3.5 rounded-full text-base transition-all duration-200 shadow-xl active:scale-95"
+              className="inline-flex items-center justify-center border-2 border-[#D4F82D] text-[#D4F82D] bg-transparent hover:bg-[#D4F82D] hover:text-[#0052FF] font-medium px-8 py-3 rounded-full text-base transition-all duration-200 active:scale-95"
             >
               Back to Home
             </Link>
