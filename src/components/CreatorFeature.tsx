@@ -14,22 +14,22 @@ export function CreatorFeature() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-gradient-to-bl from-[#EEF2FF] via-white to-white relative overflow-hidden">
+    <section className="pt-4 sm:pt-6 pb-20 sm:pb-28 bg-gradient-to-bl from-white via-white to-[#F4F8EB]/30 relative overflow-hidden">
       {/* Ambient Background Glows */}
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#D4F82D]/15 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3 z-0 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#D4F82D]/20 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/3 z-0 pointer-events-none"></div>
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[100px] translate-x-1/4 -translate-y-1/4 z-0 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left Visual Composition with Depth Layering */}
           <div className="md:col-span-1 relative flex justify-center items-center order-2 md:order-1">
-            <div className="relative w-full max-w-[480px] h-[500px] sm:h-[540px]">
+            <div className="relative w-full max-w-[480px] h-[500px] sm:h-[550px]">
 
-              {/* BEHIND LAYER (z-10): Total Revenue Card tucked behind right shoulder */}
+              {/* BEHIND LAYER (z-10): Total Revenue Card reaching higher than shoulder */}
               <motion.div
-                animate={{ y: [0, -6, 0] }}
+                animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-6 left-0 sm:left-2 bg-[#0052FF] text-white rounded-2xl p-4 shadow-xl border border-blue-400/30 z-10 min-w-[150px]"
+                className="absolute -top-3 sm:-top-6 left-0 sm:left-2 bg-[#0052FF] text-white rounded-2xl p-4 shadow-xl border border-blue-400/30 z-10 min-w-[150px]"
               >
                 <div className="text-[11px] text-blue-100 font-medium font-sans">Total Revenue</div>
                 <div className="text-[10px] text-blue-200 font-sans">July 1-28</div>
@@ -41,9 +41,9 @@ export function CreatorFeature() {
 
               {/* BEHIND LAYER (z-10): Year to Date Card tucked behind right arm/jacket */}
               <motion.div
-                animate={{ y: [0, 7, 0] }}
+                animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-                className="absolute top-44 left-0 sm:left-2 bg-[#0038B8] text-white rounded-2xl p-4 shadow-xl border border-blue-400/20 z-10 min-w-[165px]"
+                className="absolute top-36 sm:top-40 left-0 sm:left-2 bg-[#0038B8] text-white rounded-2xl p-4 shadow-xl border border-blue-400/20 z-10 min-w-[165px]"
               >
                 <div className="text-[11px] text-blue-200 font-medium font-sans">Year to Date</div>
                 <div className="text-[10px] text-blue-300 font-sans">2023</div>
@@ -57,9 +57,9 @@ export function CreatorFeature() {
 
               {/* BEHIND LAYER (z-10): Lime 3D Spiral tucked behind left arm */}
               <motion.div
-                animate={{ rotate: [0, -8, 0], y: [0, 8, 0] }}
+                animate={{ rotate: [0, -8, 0], y: [0, 7, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-36 right-4 sm:right-8 w-24 h-24 pointer-events-none z-10"
+                className="absolute top-32 sm:top-36 right-6 sm:right-10 w-24 h-24 pointer-events-none z-10"
               >
                 <Image
                   src="/assets/Frame.png"
@@ -85,7 +85,7 @@ export function CreatorFeature() {
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute bottom-6 right-0 sm:right-4 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-2xl border border-gray-100 z-30 min-w-[185px]"
+                className="absolute bottom-4 sm:bottom-6 right-0 sm:right-4 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-2xl border border-gray-100 z-30 min-w-[185px]"
               >
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-bold text-xs text-gray-900 font-heading">Happy Students</span>
