@@ -179,7 +179,7 @@ export function Hero() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -top-3 -left-4 sm:top-2 sm:-left-12 md:-left-16 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-xl border border-gray-100/60 z-30 select-none hidden xs:flex flex-col"
+              className="absolute -top-3 -left-4 sm:top-2 sm:-left-12 md:-left-16 bg-white text-gray-900 rounded-2xl px-4 py-3 shadow-xl border border-gray-100/60 z-30 select-none hidden sm:flex flex-col"
             >
               <span className="font-bold text-sm sm:text-base text-gray-900">
                 UI/UX Design
@@ -194,7 +194,7 @@ export function Hero() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="absolute top-2 -right-4 sm:top-6 sm:-right-8 md:-right-12 bg-white text-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100/60 z-30 select-none min-w-[150px] hidden xs:block"
+              className="absolute top-2 -right-4 sm:top-6 sm:-right-8 md:-right-12 bg-white text-gray-900 rounded-2xl p-4 shadow-xl border border-gray-100/60 z-30 select-none min-w-[150px] hidden sm:block"
             >
               <div className="text-[11px] sm:text-xs text-gray-500 font-medium">
                 Learning Progress
