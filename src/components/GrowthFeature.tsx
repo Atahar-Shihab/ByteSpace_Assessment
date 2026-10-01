@@ -12,111 +12,68 @@ export function GrowthFeature() {
   ];
 
   return (
-    <section className="pt-14 sm:pt-20 pb-4 sm:pb-6 bg-gradient-to-br from-[#F4F8EB]/50 via-white to-white relative overflow-hidden">
-      {/* Ambient Background Glows */}
-      <div className="absolute top-0 left-0 w-[550px] h-[550px] bg-[#D4F82D]/15 rounded-full blur-[120px] -translate-x-1/4 -translate-y-1/4 z-0 pointer-events-none"></div>
-      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[120px] -translate-x-1/3 z-0 pointer-events-none"></div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left Text Column */}
-          <div className="md:col-span-1">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight font-heading">
-              Your Path to Professional <br className="hidden sm:inline" />
-              Growth Starts Here!
-            </h2>
-            <p className="mt-5 text-base sm:text-lg text-gray-600 font-normal leading-relaxed font-sans">
-              Explore our curated selection of courses tailored to enhance your
-              capabilities and accelerate your career journey. Whether you are
-              looking to sharpen specific skills, gain industry expertise, or
-              embark on a new career path entirely, we have the resources you
-              need.
-            </p>
+    <section className="pt-16 sm:pt-20 md:pt-28 pb-10 sm:pb-14 bg-[#FAFAFA] relative overflow-hidden">
+      {/* Figma Ambient Glow Shapes */}
+      <div className="absolute top-0 left-[10%] pointer-events-none z-0">
+        <Image
+          src="/figma/shape-1.1tg3v3txbi1hq.png"
+          alt=""
+          width={1025}
+          height={711}
+          className="w-auto h-auto max-w-none opacity-80"
+        />
+      </div>
 
-            {/* Stats Row */}
-            <div className="mt-8 sm:mt-10 flex items-center gap-8 sm:gap-14">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="flex flex-col">
-                  <span className="text-3xl sm:text-4xl font-extrabold text-[#0052FF] tracking-tight font-heading">
-                    {stat.value}
-                  </span>
-                  <span className="text-sm font-medium text-gray-600 mt-1 font-sans">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col gap-10 md:gap-14 lg:flex-row lg:items-center lg:gap-16">
+          {/* Left Text Column */}
+          <div className="w-full lg:flex-1">
+            <div className="space-y-6 sm:space-y-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-950 tracking-tight leading-tight font-heading max-w-xl">
+                Your Path to Professional Growth Starts Here!
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed font-sans max-w-2xl">
+                Explore our curated selection of courses tailored to enhance your
+                capabilities and accelerate your career journey. Whether you are
+                looking to sharpen specific skills, gain industry expertise, or
+                embark on a new career path entirely, we have the resources you
+                need.
+              </p>
+
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-8 sm:gap-14 pt-2">
+                {stats.map((stat, idx) => (
+                  <div key={idx} className="flex flex-col">
+                    <span className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0052FF] tracking-tight font-heading">
+                      {stat.value}
+                    </span>
+                    <span className="text-sm sm:text-base font-medium text-gray-600 mt-1 font-sans">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right Visual Composition with Depth Layering */}
-          <div className="md:col-span-1 relative flex justify-center items-center">
-            {/* Visual Container */}
-            <div className="relative w-full max-w-[480px] h-[500px] sm:h-[550px]">
-              
-              {/* BEHIND LAYER (z-10): Course Card reaching above shoulder */}
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 sm:-top-8 left-0 sm:left-2 bg-white rounded-2xl p-3.5 shadow-xl border border-gray-100/90 w-[230px] sm:w-[250px] z-10"
-              >
-                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-gray-100 mb-2">
-                  <Image
-                    src="/assets/Frame (1).png"
-                    alt="Learn Figma"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="text-xs font-bold text-gray-900 truncate font-heading">
-                  Learn Figma from Basic
-                </div>
-                <div className="text-[10px] text-gray-400 font-sans">by purepearl studio</div>
-                <div className="mt-1 flex items-center justify-between">
-                  <span className="text-xs font-bold text-[#0052FF] font-sans">$25/lifetime</span>
-                  <span className="text-[10px] font-semibold text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full font-sans">Beginner</span>
-                </div>
-              </motion.div>
-
-              {/* BEHIND LAYER (z-10): Learning Progress Badge tucked behind left arm */}
-              <motion.div
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-44 sm:top-48 right-0 sm:right-2 bg-white rounded-2xl p-4 shadow-xl border border-gray-100/90 min-w-[160px] z-10"
-              >
-                <span className="text-[11px] text-gray-500 font-medium font-sans">Learning Progress</span>
-                <div className="text-2xl font-extrabold text-gray-900 mt-0.5 font-heading">55%</div>
-                <div className="w-full bg-gray-100 h-1.5 rounded-full mt-2 overflow-hidden">
-                  <div className="bg-[#D4F82D] h-full w-[55%] rounded-full" />
-                </div>
-              </motion.div>
-
-              {/* BEHIND LAYER (z-10): Floating 3D Lime Spiral tucked behind left ear/head */}
-              <motion.div
-                animate={{ rotate: [0, 8, 0], y: [0, -8, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-2 sm:top-4 right-6 sm:right-10 w-24 h-24 pointer-events-none z-10"
-              >
-                <Image
-                  src="/assets/Frame.png"
-                  alt="Lime 3D Spiral"
-                  width={96}
-                  height={96}
-                  className="object-contain drop-shadow-md"
-                />
-              </motion.div>
-
-              {/* FOREGROUND LAYER (z-20): Young Man with Laptop Image sits IN FRONT */}
-              <div className="relative w-full h-full z-20 pointer-events-none">
-                <Image
-                  src="/assets/Image (1).png"
-                  alt="Professional Growth"
-                  fill
-                  priority
-                  className="object-contain object-bottom drop-shadow-2xl"
-                />
-              </div>
-
-            </div>
+          {/* Right Visual Composition: Exact Figma Layered Composition */}
+          <div className="w-full lg:flex-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto w-full max-w-[577px]"
+            >
+              <Image
+                src="/figma/featured-1.png"
+                alt="Your Path to Professional Growth"
+                width={577}
+                height={540}
+                priority
+                className="h-auto w-full object-cover drop-shadow-xl"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

@@ -83,8 +83,8 @@ export default function CourseDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-white flex flex-col font-sans">
       <Navbar theme="blue" />
 
-      {/* Blue Header Section */}
-      <section className="bg-[#0052FF] text-white pt-24 pb-32 sm:pt-28 sm:pb-36 relative overflow-hidden">
+      {/* Blue Header Section Encompassing Title, Badges, and Video Player */}
+      <section className="bg-[#0052FF] text-white pt-24 pb-12 sm:pt-28 sm:pb-16 relative overflow-visible">
         {/* Background Grid Pattern */}
         <div
           className="absolute inset-0 pointer-events-none opacity-20"
@@ -98,9 +98,10 @@ export default function CourseDetailPage({ params }: PageProps) {
         />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
+          {/* Header Row: Title, Subtitle, Badges, Share */}
+          <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
             <div className="max-w-3xl">
-              <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-tight leading-tight font-heading">
+              <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight leading-tight font-heading">
                 Build Digital Asset: A Comprehensive Guide
               </h1>
               <p className="mt-2.5 text-base sm:text-lg text-white/90 font-normal">
@@ -156,19 +157,13 @@ export default function CourseDetailPage({ params }: PageProps) {
               </button>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Main 2-Column Content Area with Video & Sidebar Alignment */}
-      <section className="relative -mt-20 sm:-mt-24 pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Grid Layout: Video Player (inside blue) and Sidebar Card (extends down into white) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
             
-            {/* Left Column (8 cols): Video Player + Tabs + Tab Content */}
-            <div className="lg:col-span-8 space-y-8">
-              
-              {/* Video Player Box */}
-              <div className="relative aspect-[16/10] w-full rounded-[28px] overflow-hidden bg-gray-900 shadow-2xl border-4 border-white">
+            {/* Left Column (8 cols): Video Player entirely inside Blue Hero */}
+            <div className="lg:col-span-8">
+              <div className="relative aspect-[16/10] w-full rounded-[28px] overflow-hidden bg-gray-900 shadow-2xl border-4 border-white/20">
                 {isPlaying ? (
                   <iframe
                     className="w-full h-full"
@@ -197,9 +192,136 @@ export default function CourseDetailPage({ params }: PageProps) {
                   </div>
                 )}
               </div>
+            </div>
 
+            {/* Right Column (4 cols): Course Details Sidebar Card overlapping into white section */}
+            <div className="lg:col-span-4 relative z-30">
+              <div className="bg-white rounded-3xl p-6 sm:p-7 shadow-2xl border border-gray-100 space-y-6 text-gray-900">
+                <div>
+                  <h4 className="text-lg font-extrabold text-gray-900 font-heading">
+                    112 Lessons (24 hours)
+                  </h4>
+                  <div className="mt-4 space-y-3">
+                    <div className="flex items-center justify-between text-xs sm:text-sm text-gray-700">
+                      <span className="font-semibold font-sans">
+                        01 Introduction to Digital Assets
+                      </span>
+                      <span className="text-blue-600 font-medium font-sans">12 mins</span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs sm:text-sm text-gray-700">
+                      <span className="font-semibold font-sans">
+                        02 Design Principles for Impacts
+                      </span>
+                      <span className="text-blue-600 font-medium font-sans">21 mins</span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs sm:text-sm text-gray-700">
+                      <span className="font-semibold font-sans">
+                        03 Advanced Techniques in Digital Creation
+                      </span>
+                      <span className="text-blue-600 font-medium font-sans">16 mins</span>
+                    </div>
+                    <span className="text-xs text-gray-400 block pt-1 font-sans">
+                      99 more videos
+                    </span>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-xs text-gray-500 leading-relaxed font-sans">
+                    Ready to Dive In? Enroll Now and Start Building Your Digital
+                    Future!
+                  </p>
+                  <div className="mt-2 flex items-baseline gap-1">
+                    <span className="text-3xl font-extrabold text-[#0052FF] font-heading">
+                      $25
+                    </span>
+                    <span className="text-xs text-gray-500 font-sans">
+                      /lifetime
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => setEnrolled(true)}
+                    className="w-full mt-4 bg-[#D4F82D] hover:bg-[#c2e620] text-gray-950 font-bold py-3.5 rounded-full text-base transition-all active:scale-95 shadow-md font-sans"
+                  >
+                    {enrolled ? "Enrolled Successfully! 🎉" : "Enroll Now"}
+                  </button>
+                </div>
+
+                {/* This course include */}
+                <div className="pt-4 border-t border-gray-100 space-y-3">
+                  <h5 className="text-xs font-bold text-gray-900 uppercase tracking-wider font-heading">
+                    This course include
+                  </h5>
+                  <div className="space-y-2.5 text-xs text-gray-600 font-sans">
+                    <div className="flex items-center gap-2.5">
+                      <FileText className="w-4 h-4 text-blue-600 shrink-0" />
+                      <span>Learning Resources</span>
+                    </div>
+                    <div className="flex items-center gap-2.5">
+                      <Video className="w-4 h-4 text-blue-600 shrink-0" />
+                      <span>Quality Lesson Videos</span>
+                    </div>
+                    <div className="flex items-center gap-2.5">
+                      <Award className="w-4 h-4 text-blue-600 shrink-0" />
+                      <span>Certificate of Completion</span>
+                    </div>
+                    <div className="flex items-center gap-2.5">
+                      <MessageSquare className="w-4 h-4 text-blue-600 shrink-0" />
+                      <span>Private Consultation</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Creator Card */}
+                <div className="pt-4 border-t border-gray-100">
+                  <div className="flex items-center gap-3">
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gray-100">
+                      <Image
+                        src="/assets/charlesdeluvio-cZr2sgaxy3Q-unsplash.jpg"
+                        alt="Creator"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-gray-900 text-sm font-heading">
+                        PurePearl Studio
+                      </h5>
+                      <span className="text-xs text-gray-500 font-sans">
+                        Professional Creator
+                      </span>
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-gray-500 mt-3 leading-relaxed font-sans">
+                    Ready to Dive In? Enroll Now and Start Building Your Digital
+                    Future!
+                  </p>
+
+                  <Link
+                    href="/creators/purepearl-studio"
+                    className="mt-3 block text-center py-2 px-4 rounded-full border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50 transition-colors font-sans"
+                  >
+                    See Full Profile
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* White Section for Tabs and Content - Directly below Blue Hero */}
+      <section className="bg-white text-gray-900 pt-8 pb-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+            
+            {/* Left Column (8 cols): Tabs & Content */}
+            <div className="lg:col-span-8 space-y-8">
               {/* Tab Navigation: About, Lessons, Reviews */}
-              <div className="flex items-center gap-3 pt-2">
+              <div className="flex items-center gap-3">
                 {[
                   { key: "about", label: "About" },
                   { key: "lessons", label: "Lesson" },
@@ -579,120 +701,8 @@ export default function CourseDetailPage({ params }: PageProps) {
               )}
             </div>
 
-            {/* Right Column (4 cols): Sticky Course Details Sidebar Card */}
-            <div className="lg:col-span-4 sticky top-24">
-              <div className="bg-white rounded-3xl p-6 sm:p-7 shadow-2xl border border-gray-100/90 space-y-6">
-                <div>
-                  <h4 className="text-lg font-extrabold text-gray-900 font-heading">
-                    112 Lessons (24 hours)
-                  </h4>
-                  <div className="mt-4 space-y-3">
-                    <div className="flex items-center justify-between text-xs sm:text-sm text-gray-700">
-                      <span className="font-semibold font-sans">
-                        01 Introduction to Digital Assets
-                      </span>
-                      <span className="text-blue-600 font-medium font-sans">12 mins</span>
-                    </div>
-                    <div className="flex items-center justify-between text-xs sm:text-sm text-gray-700">
-                      <span className="font-semibold font-sans">
-                        02 Design Principles for Impacts
-                      </span>
-                      <span className="text-blue-600 font-medium font-sans">21 mins</span>
-                    </div>
-                    <div className="flex items-center justify-between text-xs sm:text-sm text-gray-700">
-                      <span className="font-semibold font-sans">
-                        03 Advanced Techniques in Digital Creation
-                      </span>
-                      <span className="text-blue-600 font-medium font-sans">16 mins</span>
-                    </div>
-                    <span className="text-xs text-gray-400 block pt-1 font-sans">
-                      99 more videos
-                    </span>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-gray-100">
-                  <p className="text-xs text-gray-500 leading-relaxed font-sans">
-                    Ready to Dive In? Enroll Now and Start Building Your Digital
-                    Future!
-                  </p>
-                  <div className="mt-2 flex items-baseline gap-1">
-                    <span className="text-3xl font-extrabold text-[#0052FF] font-heading">
-                      $25
-                    </span>
-                    <span className="text-xs text-gray-500 font-sans">
-                      /lifetime
-                    </span>
-                  </div>
-
-                  <button
-                    onClick={() => setEnrolled(true)}
-                    className="w-full mt-4 bg-[#D4F82D] hover:bg-[#c2e620] text-gray-950 font-bold py-3.5 rounded-full text-base transition-all active:scale-95 shadow-md font-sans"
-                  >
-                    {enrolled ? "Enrolled Successfully! 🎉" : "Enroll Now"}
-                  </button>
-                </div>
-
-                {/* This course include */}
-                <div className="pt-4 border-t border-gray-100 space-y-3">
-                  <h5 className="text-xs font-bold text-gray-900 uppercase tracking-wider font-heading">
-                    This course include
-                  </h5>
-                  <div className="space-y-2.5 text-xs text-gray-600 font-sans">
-                    <div className="flex items-center gap-2.5">
-                      <FileText className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Learning Resources</span>
-                    </div>
-                    <div className="flex items-center gap-2.5">
-                      <Video className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Quality Lesson Videos</span>
-                    </div>
-                    <div className="flex items-center gap-2.5">
-                      <Award className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Certificate of Completion</span>
-                    </div>
-                    <div className="flex items-center gap-2.5">
-                      <MessageSquare className="w-4 h-4 text-blue-600 shrink-0" />
-                      <span>Private Consultation</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Creator Card */}
-                <div className="pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gray-100">
-                      <Image
-                        src="/assets/charlesdeluvio-cZr2sgaxy3Q-unsplash.jpg"
-                        alt="Creator"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div>
-                      <h5 className="font-bold text-gray-900 text-sm font-heading">
-                        PurePearl Studio
-                      </h5>
-                      <span className="text-xs text-gray-500 font-sans">
-                        Professional Creator
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-gray-500 mt-3 leading-relaxed font-sans">
-                    Ready to Dive In? Enroll Now and Start Building Your Digital
-                    Future!
-                  </p>
-
-                  <Link
-                    href="/creators/purepearl-studio"
-                    className="mt-3 block text-center py-2 px-4 rounded-full border border-gray-200 text-xs font-bold text-gray-700 hover:bg-gray-50 transition-colors font-sans"
-                  >
-                    See Full Profile
-                  </Link>
-                </div>
-              </div>
-            </div>
+            {/* Right Column (4 cols): Spacer column so layout grid remains aligned with the sidebar above */}
+            <div className="hidden lg:block lg:col-span-4" />
 
           </div>
         </div>

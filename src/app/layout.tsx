@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     "web development",
     "learning platform",
   ],
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
