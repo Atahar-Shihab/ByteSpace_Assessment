@@ -12,101 +12,68 @@ export function GrowthFeature() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F4F7FF] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Text Column */}
-          <div className="lg:col-span-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
-              Your Path to Professional <br className="hidden sm:inline" />
-              Growth Starts Here!
-            </h2>
-            <p className="mt-5 text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
-              Explore our curated selection of courses tailored to enhance your
-              capabilities and accelerate your career journey. Whether you are
-              looking to sharpen specific skills, gain industry expertise, or
-              embark on a new career path entirely, we have the resources you
-              need.
-            </p>
+    <section className="pt-16 sm:pt-20 md:pt-28 pb-10 sm:pb-14 bg-[#FAFAFA] relative overflow-hidden">
+      {/* Figma Ambient Glow Shapes */}
+      <div className="absolute top-0 left-[10%] pointer-events-none z-0">
+        <Image
+          src="/figma/shape-1.1tg3v3txbi1hq.png"
+          alt=""
+          width={1025}
+          height={711}
+          className="w-auto h-auto max-w-none opacity-80"
+        />
+      </div>
 
-            {/* Stats Row */}
-            <div className="mt-10 sm:mt-12 flex items-center gap-8 sm:gap-14 border-t border-gray-200/80 pt-8">
-              {stats.map((stat, idx) => (
-                <div key={idx} className="flex flex-col">
-                  <span className="text-3xl sm:text-4xl font-extrabold text-[#0052FF] tracking-tight">
-                    {stat.value}
-                  </span>
-                  <span className="text-sm font-medium text-gray-600 mt-1">
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex flex-col gap-10 md:gap-14 lg:flex-row lg:items-center lg:gap-16">
+          {/* Left Text Column */}
+          <div className="w-full lg:flex-1">
+            <div className="space-y-6 sm:space-y-8">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-950 tracking-tight leading-tight font-heading max-w-xl">
+                Your Path to Professional Growth Starts Here!
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed font-sans max-w-2xl">
+                Explore our curated selection of courses tailored to enhance your
+                capabilities and accelerate your career journey. Whether you are
+                looking to sharpen specific skills, gain industry expertise, or
+                embark on a new career path entirely, we have the resources you
+                need.
+              </p>
+
+              {/* Stats Row */}
+              <div className="flex flex-wrap gap-8 sm:gap-14 pt-2">
+                {stats.map((stat, idx) => (
+                  <div key={idx} className="flex flex-col">
+                    <span className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0052FF] tracking-tight font-heading">
+                      {stat.value}
+                    </span>
+                    <span className="text-sm sm:text-base font-medium text-gray-600 mt-1 font-sans">
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right Visual Composition */}
-          <div className="lg:col-span-6 relative flex justify-center items-center">
-            {/* Soft background shape */}
-            <div className="relative w-full max-w-[480px] h-[480px] sm:h-[540px]">
-              {/* Young Man with Laptop Image */}
-              <div className="relative w-full h-full">
-                <Image
-                  src="/assets/Image (1).png"
-                  alt="Professional Growth"
-                  fill
-                  className="object-contain object-bottom drop-shadow-xl"
-                />
-              </div>
-
-              {/* Floating Course Card (Left) */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-10 -left-4 sm:-left-8 bg-white rounded-2xl p-3 shadow-2xl border border-gray-100 max-w-[210px] hidden sm:block"
-              >
-                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-gray-100 mb-2">
-                  <Image
-                    src="/assets/Frame (1).png"
-                    alt="Learn Figma"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="text-xs font-bold text-gray-900 truncate">
-                  Learn Figma from Basic
-                </div>
-                <div className="text-[10px] text-gray-400">by purepearl studio</div>
-                <div className="mt-1 text-xs font-bold text-[#0052FF]">$25/lifetime</div>
-              </motion.div>
-
-              {/* Floating Progress Badge (Right) */}
-              <motion.div
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-44 -right-2 sm:-right-6 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 min-w-[150px] z-20"
-              >
-                <span className="text-[11px] text-gray-500 font-medium">Learning Progress</span>
-                <div className="text-2xl font-extrabold text-gray-900 mt-0.5">55%</div>
-                <div className="w-full bg-gray-100 h-1.5 rounded-full mt-2 overflow-hidden">
-                  <div className="bg-[#D4F82D] h-full w-[55%] rounded-full" />
-                </div>
-              </motion.div>
-
-              {/* Floating 3D Lime Spiral */}
-              <motion.div
-                animate={{ rotate: [0, 10, 0], y: [0, -12, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-24 h-24 pointer-events-none z-10"
-              >
-                <Image
-                  src="/assets/Frame.png"
-                  alt="Lime 3D Spiral"
-                  width={96}
-                  height={96}
-                  className="object-contain drop-shadow-md"
-                />
-              </motion.div>
-            </div>
+          {/* Right Visual Composition: Exact Figma Layered Composition */}
+          <div className="w-full lg:flex-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto w-full max-w-[577px]"
+            >
+              <Image
+                src="/figma/featured-1.png"
+                alt="Your Path to Professional Growth"
+                width={577}
+                height={540}
+                priority
+                className="h-auto w-full object-cover drop-shadow-xl"
+              />
+            </motion.div>
           </div>
         </div>
       </div>

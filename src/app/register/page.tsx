@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Star, Eye, EyeOff, ArrowLeft } from "lucide-react";
-import { motion } from "framer-motion";
+import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -35,10 +34,10 @@ export default function RegisterPage() {
         className="absolute inset-0 pointer-events-none opacity-20"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 1px, transparent 1px)
+            linear-gradient(90deg, rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+            linear-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px)
           `,
-          backgroundSize: "64px 64px",
+          backgroundSize: "115px 115px",
         }}
       />
 
@@ -53,16 +52,16 @@ export default function RegisterPage() {
         </Link>
       </div>
 
-      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center relative z-20 my-auto py-8">
-        {/* Left Side: Brand Narrative & 3D Mockup */}
+      <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center relative z-20 my-auto py-8">
+        {/* Left Side: Brand Narrative & 1:1 Figma Visual Composition */}
         <div className="lg:col-span-6 text-white flex flex-col justify-center">
-          {/* Logo Mark */}
-          <Link href="/" className="inline-block mb-6 w-12 h-12">
+          {/* ByteSpace Yellow Logo Mark */}
+          <Link href="/" className="inline-block mb-6 w-11 h-11">
             <svg
               viewBox="0 0 40 40"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-12 h-12 drop-shadow-md"
+              className="w-11 h-11 drop-shadow-md"
             >
               <rect width="40" height="40" rx="10" fill="transparent" />
               <path
@@ -73,120 +72,35 @@ export default function RegisterPage() {
             </svg>
           </Link>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight font-heading">
             Sign up and come in
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-white/85 max-w-md font-normal leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-white/85 max-w-md font-normal leading-relaxed font-sans">
             The registration process is straightforward, uncomplicated, and
             efficient, allowing users to sign up quickly, easily, and at no
             cost.
           </p>
 
-          {/* Floating Composition Mockup */}
-          <div className="mt-8 relative max-w-md h-[300px] hidden sm:block">
-            {/* 3D Torus */}
-            <motion.div
-              animate={{ y: [0, -8, 0], rotate: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 left-6 w-16 h-16 z-20 pointer-events-none"
-            >
-              <Image
-                src="/assets/Cone (1).png"
-                alt="3D Torus"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </motion.div>
-
-            {/* Main Course Card */}
-            <motion.div
-              animate={{ y: [0, 6, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-2 left-16 bg-white text-gray-900 rounded-2xl p-3 shadow-2xl border border-white/60 max-w-[270px] z-10"
-            >
-              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-gray-900 mb-2">
-                <Image
-                  src="/assets/luke-chesser-JKUTrJ4vK00-unsplash.jpg"
-                  alt="Big Data"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute bottom-1.5 left-1.5 right-1.5 bg-white/80 backdrop-blur-xs px-2 py-0.5 rounded-full flex items-center justify-between text-[9px] font-medium text-gray-800">
-                  <span>17 Lessons</span>
-                  <span>2 hours 16 mins</span>
-                  <span>59 Comments</span>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-xs">the Power of Big Data</span>
-                <span className="text-[10px] font-bold text-yellow-500 flex items-center">
-                  4.5 ★
-                </span>
-              </div>
-              <div className="text-[9px] text-gray-400">by purepearl studio</div>
-              <div className="mt-1 flex items-center justify-between">
-                <span className="text-xs font-bold text-[#0052FF]">$25/lifetime</span>
-                <div className="flex items-center -space-x-1">
-                  <div className="w-4 h-4 rounded-full bg-gray-300 border border-white" />
-                  <div className="w-4 h-4 rounded-full bg-gray-400 border border-white" />
-                  <div className="w-4 h-4 rounded-full bg-[#D4F82D] text-[7px] font-bold flex items-center justify-center">
-                    26+
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Happy Students Yellow Card */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-              className="absolute bottom-4 left-32 bg-[#D4F82D] text-gray-900 rounded-2xl px-4 py-2.5 shadow-xl z-20 min-w-[190px]"
-            >
-              <div className="flex items-center justify-between text-xs font-bold">
-                <span>Happy Students</span>
-                <span className="flex items-center text-[10px]">
-                  4.5 (240){" "}
-                  <Star className="w-3 h-3 fill-blue-600 text-blue-600 ml-1" />
-                </span>
-              </div>
-              <div className="flex items-center mt-1.5 -space-x-1.5">
-                <div className="relative w-5 h-5 rounded-full border border-white overflow-hidden bg-gray-100">
-                  <Image src="/assets/Ellipse.png" alt="Student" fill className="object-cover" />
-                </div>
-                <div className="relative w-5 h-5 rounded-full border border-white overflow-hidden bg-gray-100">
-                  <Image src="/assets/Ellipse (1).png" alt="Student" fill className="object-cover" />
-                </div>
-                <div className="w-5 h-5 rounded-full bg-[#111827] text-white text-[8px] font-bold flex items-center justify-center">
-                  2K+
-                </div>
-              </div>
-            </motion.div>
-
-            {/* 3D Cone */}
-            <motion.div
-              animate={{ y: [0, 8, 0], rotate: [0, -6, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute bottom-0 left-2 w-16 h-16 z-20 pointer-events-none"
-            >
-              <Image
-                src="/assets/Cone.png"
-                alt="3D Cone"
-                width={64}
-                height={64}
-                className="object-contain"
-              />
-            </motion.div>
+          {/* 1:1 Figma Auth Composition */}
+          <div className="mt-8 sm:mt-10 max-w-[420px] lg:max-w-[460px] hidden sm:block">
+            <Image
+              src="/figma/auth.png"
+              alt="ByteSpace Cards and Shapes"
+              width={530}
+              height={586}
+              priority
+              className="w-full h-auto object-contain drop-shadow-2xl"
+            />
           </div>
         </div>
 
         {/* Right Side: Register Card */}
         <div className="lg:col-span-6 flex justify-center">
-          <div className="w-full max-w-[460px] bg-white rounded-[32px] p-8 sm:p-10 shadow-2xl">
+          <div className="w-full max-w-[460px] bg-white rounded-3xl sm:rounded-[32px] p-7 sm:p-10 shadow-2xl">
             <span className="text-sm font-semibold text-[#0052FF]">
               Create an Account
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-1">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 mt-1 font-heading">
               Welcome to ByteSpace
             </h2>
 
@@ -199,7 +113,7 @@ export default function RegisterPage() {
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               {/* Full Name */}
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                <label className="block text-xs font-semibold text-gray-700 mb-1.5 font-sans">
                   Full Name
                 </label>
                 <input
@@ -208,13 +122,13 @@ export default function RegisterPage() {
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="Jamie Davis"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 outline-none focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-950 placeholder-gray-400 outline-none focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] transition-all font-sans"
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                <label className="block text-xs font-semibold text-gray-700 mb-1.5 font-sans">
                   Email
                 </label>
                 <input
@@ -223,13 +137,13 @@ export default function RegisterPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="designer@example.com"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 outline-none focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-950 placeholder-gray-400 outline-none focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] transition-all font-sans"
                 />
               </div>
 
               {/* Password */}
               <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1.5">
+                <label className="block text-xs font-semibold text-gray-700 mb-1.5 font-sans">
                   Password
                 </label>
                 <div className="relative">
@@ -239,7 +153,7 @@ export default function RegisterPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 outline-none focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] transition-all pr-10"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-950 placeholder-gray-400 outline-none focus:border-[#0052FF] focus:ring-1 focus:ring-[#0052FF] transition-all pr-10 font-sans"
                   />
                   <button
                     type="button"
@@ -255,20 +169,20 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              {/* Continue Button */}
+              {/* Continue Button Aligned to Right */}
               <div className="pt-2 flex justify-end">
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-[#D4F82D] hover:bg-[#c4ea21] text-gray-950 font-bold px-8 py-2.5 rounded-full text-sm transition-all active:scale-95 shadow-sm disabled:opacity-50"
+                  className="bg-[#D4F82D] hover:bg-[#c4ea21] text-gray-950 font-bold px-8 py-3 rounded-full text-sm transition-all active:scale-95 shadow-sm disabled:opacity-50 cursor-pointer font-sans"
                 >
-                  {loading ? "Creating..." : "Continue"}
+                  {loading ? "Creating account..." : "Continue"}
                 </button>
               </div>
             </form>
 
             {/* Switch to Login */}
-            <div className="mt-8 text-center text-xs text-gray-500">
+            <div className="mt-12 text-center text-xs text-gray-500 font-sans">
               Already have an account?{" "}
               <Link
                 href="/login"
