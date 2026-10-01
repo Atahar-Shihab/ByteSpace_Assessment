@@ -12,9 +12,10 @@ export function GrowthFeature() {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-gradient-to-br from-[#EEF2FF] via-white to-white relative overflow-hidden">
       {/* Ambient Background Glows */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-blue-50 rounded-full blur-[100px] -translate-x-1/3 -translate-y-1/3 z-0 pointer-events-none"></div>
+      <div className="absolute top-0 left-0 w-[700px] h-[700px] bg-blue-100/60 rounded-full blur-[120px] -translate-x-1/4 -translate-y-1/4 z-0 pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#D4F82D]/10 rounded-full blur-[100px] translate-x-1/4 translate-y-1/4 z-0 pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">

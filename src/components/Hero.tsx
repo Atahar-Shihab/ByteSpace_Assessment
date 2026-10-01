@@ -64,15 +64,15 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Bottom Left White Torus */}
+      {/* Bottom Left Lime Torus */}
       <motion.div
         animate={{ y: [0, -10, 0], rotate: [0, 12, 0] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute bottom-8 left-6 md:left-24 w-28 md:w-40 pointer-events-none z-10"
       >
         <Image
-          src="/assets/Torus_White.png"
-          alt="3D White Torus"
+          src="/assets/Cone (1).png"
+          alt="3D Lime Torus"
           width={160}
           height={160}
           className="object-contain drop-shadow-xl"
@@ -83,28 +83,13 @@ export function Hero() {
       <motion.div
         animate={{ y: [0, 12, 0], rotate: [0, 8, 0] }}
         transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-        className="absolute top-12 right-6 md:right-28 w-24 md:w-40 pointer-events-none z-10"
+        className="absolute top-12 right-6 md:right-16 w-28 md:w-44 pointer-events-none z-10"
       >
         <Image
           src="/assets/Cone.png"
           alt="3D Lime Cone"
-          width={160}
-          height={160}
-          className="object-contain drop-shadow-xl"
-        />
-      </motion.div>
-
-      {/* Mid Right White Pyramid */}
-      <motion.div
-        animate={{ y: [0, -10, 0], rotate: [0, 6, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-        className="absolute top-64 right-10 md:right-36 w-20 md:w-32 pointer-events-none z-10"
-      >
-        <Image
-          src="/assets/Pyramid_White.png"
-          alt="3D White Pyramid"
-          width={130}
-          height={130}
+          width={180}
+          height={180}
           className="object-contain drop-shadow-xl"
         />
       </motion.div>
@@ -113,13 +98,13 @@ export function Hero() {
       <motion.div
         animate={{ y: [0, -14, 0], rotate: [0, -5, 0] }}
         transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-        className="absolute bottom-16 right-4 md:right-20 w-24 md:w-36 pointer-events-none z-10"
+        className="absolute bottom-12 right-4 md:right-16 w-28 md:w-44 pointer-events-none z-10"
       >
         <Image
           src="/assets/Frame (3).png"
           alt="3D White Accent"
-          width={140}
-          height={140}
+          width={180}
+          height={180}
           className="object-contain drop-shadow-xl"
         />
       </motion.div>
